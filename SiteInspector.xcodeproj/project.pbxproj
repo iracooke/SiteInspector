@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		751511BA1528DE0B0021D789 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 751511B91528DE0B0021D789 /* home.png */; };
+		751511C71528F5120021D789 /* waypoint_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 751511C61528F5120021D789 /* waypoint_home.png */; };
+		751511C91528F53E0021D789 /* waypoint_generic.png in Resources */ = {isa = PBXBuildFile; fileRef = 751511C81528F53E0021D789 /* waypoint_generic.png */; };
 		754846AC1527B63F0031EF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AB1527B63F0031EF76 /* UIKit.framework */; };
 		754846AE1527B63F0031EF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AD1527B63F0031EF76 /* Foundation.framework */; };
 		754846B01527B63F0031EF76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AF1527B63F0031EF76 /* CoreGraphics.framework */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		751511B91528DE0B0021D789 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		751511C61528F5120021D789 /* waypoint_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waypoint_home.png; sourceTree = "<group>"; };
+		751511C81528F53E0021D789 /* waypoint_generic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waypoint_generic.png; sourceTree = "<group>"; };
 		754846A71527B63F0031EF76 /* SiteInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiteInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754846AB1527B63F0031EF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		754846AD1527B63F0031EF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,7 +166,9 @@
 		754846F715282CC20031EF76 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				751511C61528F5120021D789 /* waypoint_home.png */,
 				751511B91528DE0B0021D789 /* home.png */,
+				751511C81528F53E0021D789 /* waypoint_generic.png */,
 				754846C71527B63F0031EF76 /* second.png */,
 				754846C91527B63F0031EF76 /* second@2x.png */,
 				754846C01527B63F0031EF76 /* map_tab_icon.png */,
@@ -232,6 +238,8 @@
 				754846D31527B63F0031EF76 /* MFSecondViewController_iPhone.xib in Resources */,
 				754846D61527B63F0031EF76 /* MFSecondViewController_iPad.xib in Resources */,
 				751511BA1528DE0B0021D789 /* home.png in Resources */,
+				751511C71528F5120021D789 /* waypoint_home.png in Resources */,
+				751511C91528F53E0021D789 /* waypoint_generic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

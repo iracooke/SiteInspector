@@ -14,11 +14,12 @@
 
 
 enum MFWaypointKind {
-    Home = 0,
-    Anbinik = 1
+    MFWaypointKindNone=0,
+    MFWaypointKindHome = 1,
+    MFWaypointKinAnbinik = 2
 };
 
-@interface MFMapViewController : UIViewController<AGSMapViewLayerDelegate> {
+@interface MFMapViewController : UIViewController<AGSMapViewLayerDelegate,AGSInfoTemplateDelegate,AGSMapViewCalloutDelegate> {
 	
 	//container for map layers
 	AGSMapView *_mapView;

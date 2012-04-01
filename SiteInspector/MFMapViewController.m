@@ -64,7 +64,7 @@
     self.waypointsLayer = [AGSGraphicsLayer graphicsLayer];
     self.waypointsView	 = [self.mapView addMapLayer:self.waypointsLayer withName:@"Waypoints Layer"];
     
-    [self addWaypointWithName:@"Home" kind:Home lat:-37.638362 long:145.186137];
+    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-37.638362 long:145.186137];
     
 	AGSSpatialReference *sr = [AGSSpatialReference spatialReferenceWithWKID:4326];
 	double xmin, ymin, xmax, ymax;
@@ -102,6 +102,24 @@
 
 
 #pragma mark -
+#pragma mark Waypoint Image Lookup
+
+- (NSString*) imageNameForWaypointKind:(NSInteger)kind {
+    NSString *imageName=nil;
+    switch (kind) {
+        case MFWaypointKindNone:
+            imageName=@"waypoint_generic.png";
+            break;
+        case MFWaypointKindHome:
+            imageName = @"waypoint_home.png";
+            break;
+        default:
+            break;
+    } 
+    return imageName;
+}
+
+#pragma mark -
 #pragma mark AGSMapViewLayerDelegate
 
 -(void) mapViewDidLoad:(AGSMapView*)mapView {
@@ -115,8 +133,22 @@
 #pragma mark Add/Remove Waypoints
 
 - (void) addWaypointWithName:(NSString*)wpName kind:(NSInteger)wpKind lat:(float) wpLat long:(float) wpLong {
-    //create a marker symbol to be used by our Graphic
-    AGSSimpleMarkerSymbol *wpSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbol];
+
+    
+    AGSMarkerSymbol *wpSymbol=nil;
+    NSMutableDictionary *wpAttributes=[NSMutableDictionary dictionaryWithObjectsAndKeys:wpName,@"Title",[NSNumber numberWithInt:wpKind],@"Kind", nil];
+
+    switch (wpKind) {
+        case MFWaypointKindNone:
+            wpSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbol];
+            break;
+        case MFWaypointKindHome:
+            wpSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"home.png"];
+            break;
+        default:
+            break;
+    }
+    
 
     //Create an AGSPoint (which inherits from AGSGeometry) that defines where the Graphic will be drawn
     AGSPoint* wpPoint =
@@ -127,8 +159,8 @@
     AGSGraphic* wpGraphic =
     [AGSGraphic graphicWithGeometry:wpPoint
                              symbol:wpSymbol
-                         attributes:nil
-               infoTemplateDelegate:nil];
+                         attributes:wpAttributes
+               infoTemplateDelegate:self];
 
     //Add the graphic to the Graphics layer
     [self.waypointsLayer addGraphic:wpGraphic];
@@ -136,5 +168,30 @@
     //Tell the layer to redraw itself
     [self.waypointsLayer dataChanged];
 }
+
+
+#pragma mark -
+#pragma mark InfoTemplateDelegate
+
+- (NSString *)titleForGraphic:(AGSGraphic *)graphic screenPoint:(CGPoint)screen mapPoint:(AGSPoint *)map {
+    return [graphic.attributes objectForKey:@"Title"];
+}
+
+- (NSString *)detailForGraphic:(AGSGraphic *)graphic screenPoint:(CGPoint)screen mapPoint:(AGSPoint *)map {
+    return [NSString stringWithFormat:@"Lat:%f  Long:%f",map.y,map.x];
+}
+
+- (UIImage *)imageForGraphic:(AGSGraphic *) graphic screenPoint:(CGPoint) screen mapPoint:(AGSPoint *) mapPoint {  
+    return [UIImage imageNamed:[self imageNameForWaypointKind:[[[graphic attributes] objectForKey:@"Kind"] intValue]]];	
+}
+
+#pragma mark -
+#pragma mark CalloutDelegate
+
+
+- (void) mapView: (AGSMapView *) mapView didClickCalloutAccessoryButtonForGraphic: (AGSGraphic *) graphic {
+    // Edit waypoint. Look it up in the database and display in an editable view.
+}
+
 
 @end
