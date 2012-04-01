@@ -7,47 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751511BA1528DE0B0021D789 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 751511B91528DE0B0021D789 /* home.png */; };
 		754846AC1527B63F0031EF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AB1527B63F0031EF76 /* UIKit.framework */; };
 		754846AE1527B63F0031EF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AD1527B63F0031EF76 /* Foundation.framework */; };
 		754846B01527B63F0031EF76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AF1527B63F0031EF76 /* CoreGraphics.framework */; };
 		754846B61527B63F0031EF76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 754846B41527B63F0031EF76 /* InfoPlist.strings */; };
 		754846B81527B63F0031EF76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846B71527B63F0031EF76 /* main.m */; };
 		754846BC1527B63F0031EF76 /* MFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846BB1527B63F0031EF76 /* MFAppDelegate.m */; };
-		754846BF1527B63F0031EF76 /* MFFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846BE1527B63F0031EF76 /* MFFirstViewController.m */; };
-		754846C11527B63F0031EF76 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C01527B63F0031EF76 /* first.png */; };
-		754846C31527B63F0031EF76 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C21527B63F0031EF76 /* first@2x.png */; };
+		754846BF1527B63F0031EF76 /* MFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846BE1527B63F0031EF76 /* MFMapViewController.m */; };
+		754846C11527B63F0031EF76 /* map_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C01527B63F0031EF76 /* map_tab_icon.png */; };
+		754846C31527B63F0031EF76 /* map_tab_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C21527B63F0031EF76 /* map_tab_icon@2x.png */; };
 		754846C61527B63F0031EF76 /* MFSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846C51527B63F0031EF76 /* MFSecondViewController.m */; };
 		754846C81527B63F0031EF76 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C71527B63F0031EF76 /* second.png */; };
 		754846CA1527B63F0031EF76 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C91527B63F0031EF76 /* second@2x.png */; };
-		754846CD1527B63F0031EF76 /* MFFirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846CB1527B63F0031EF76 /* MFFirstViewController_iPhone.xib */; };
-		754846D01527B63F0031EF76 /* MFFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846CE1527B63F0031EF76 /* MFFirstViewController_iPad.xib */; };
+		754846CD1527B63F0031EF76 /* MFMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */; };
+		754846D01527B63F0031EF76 /* MFMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */; };
 		754846D31527B63F0031EF76 /* MFSecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846D11527B63F0031EF76 /* MFSecondViewController_iPhone.xib */; };
 		754846D61527B63F0031EF76 /* MFSecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846D41527B63F0031EF76 /* MFSecondViewController_iPad.xib */; };
+		754846EE1527B81A0031EF76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846EC1527B7B60031EF76 /* Security.framework */; };
+		754846EF1527B81A0031EF76 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846EA1527B7B00031EF76 /* libz.dylib */; };
+		754846F01527B81A0031EF76 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E81527B7A60031EF76 /* MobileCoreServices.framework */; };
+		754846F11527B81A0031EF76 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E61527B79E0031EF76 /* MediaPlayer.framework */; };
+		754846F21527B81A0031EF76 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E41527B7910031EF76 /* libstdc++.dylib */; };
+		754846F31527B81A0031EF76 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E21527B77F0031EF76 /* CoreText.framework */; };
+		754846F41527B81A0031EF76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E01527B7760031EF76 /* QuartzCore.framework */; };
+		754846F51527B81A0031EF76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846DE1527B76C0031EF76 /* CoreLocation.framework */; };
+		754846F61527B81A0031EF76 /* libArcGIS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846DC1527B73D0031EF76 /* libArcGIS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751511B91528DE0B0021D789 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		754846A71527B63F0031EF76 /* SiteInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiteInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754846AB1527B63F0031EF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		754846AD1527B63F0031EF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		754846AF1527B63F0031EF76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		754846B31527B63F0031EF76 /* SiteInspector-Info.plist */ = {isa = PBXFileReference; path = "SiteInspector-Info.plist"; sourceTree = "<group>"; };
+		754846B31527B63F0031EF76 /* SiteInspector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SiteInspector-Info.plist"; sourceTree = "<group>"; };
 		754846B51527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		754846B71527B63F0031EF76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		754846B91527B63F0031EF76 /* SiteInspector-Prefix.pch */ = {isa = PBXFileReference; path = "SiteInspector-Prefix.pch"; sourceTree = "<group>"; };
-		754846BA1527B63F0031EF76 /* MFAppDelegate.h */ = {isa = PBXFileReference; path = MFAppDelegate.h; sourceTree = "<group>"; };
+		754846B91527B63F0031EF76 /* SiteInspector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SiteInspector-Prefix.pch"; sourceTree = "<group>"; };
+		754846BA1527B63F0031EF76 /* MFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFAppDelegate.h; sourceTree = "<group>"; };
 		754846BB1527B63F0031EF76 /* MFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFAppDelegate.m; sourceTree = "<group>"; };
-		754846BD1527B63F0031EF76 /* MFFirstViewController.h */ = {isa = PBXFileReference; path = MFFirstViewController.h; sourceTree = "<group>"; };
-		754846BE1527B63F0031EF76 /* MFFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFFirstViewController.m; sourceTree = "<group>"; };
-		754846C01527B63F0031EF76 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		754846C21527B63F0031EF76 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		754846C41527B63F0031EF76 /* MFSecondViewController.h */ = {isa = PBXFileReference; path = MFSecondViewController.h; sourceTree = "<group>"; };
+		754846BD1527B63F0031EF76 /* MFMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFMapViewController.h; sourceTree = "<group>"; };
+		754846BE1527B63F0031EF76 /* MFMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFMapViewController.m; sourceTree = "<group>"; };
+		754846C01527B63F0031EF76 /* map_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_tab_icon.png; sourceTree = "<group>"; };
+		754846C21527B63F0031EF76 /* map_tab_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_tab_icon@2x.png"; sourceTree = "<group>"; };
+		754846C41527B63F0031EF76 /* MFSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSecondViewController.h; sourceTree = "<group>"; };
 		754846C51527B63F0031EF76 /* MFSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSecondViewController.m; sourceTree = "<group>"; };
 		754846C71527B63F0031EF76 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		754846C91527B63F0031EF76 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		754846CC1527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFFirstViewController_iPhone.xib; sourceTree = "<group>"; };
-		754846CF1527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFFirstViewController_iPad.xib; sourceTree = "<group>"; };
+		754846CC1527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFMapViewController_iPhone.xib; sourceTree = "<group>"; };
+		754846CF1527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFMapViewController_iPad.xib; sourceTree = "<group>"; };
 		754846D21527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFSecondViewController_iPhone.xib; sourceTree = "<group>"; };
 		754846D51527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFSecondViewController_iPad.xib; sourceTree = "<group>"; };
+		754846DC1527B73D0031EF76 /* libArcGIS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libArcGIS.a; path = ../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib/libArcGIS.a; sourceTree = "<group>"; };
+		754846DE1527B76C0031EF76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		754846E01527B7760031EF76 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		754846E21527B77F0031EF76 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		754846E41527B7910031EF76 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		754846E61527B79E0031EF76 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		754846E81527B7A60031EF76 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		754846EA1527B7B00031EF76 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		754846EC1527B7B60031EF76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +75,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754846EE1527B81A0031EF76 /* Security.framework in Frameworks */,
+				754846EF1527B81A0031EF76 /* libz.dylib in Frameworks */,
+				754846F01527B81A0031EF76 /* MobileCoreServices.framework in Frameworks */,
+				754846F11527B81A0031EF76 /* MediaPlayer.framework in Frameworks */,
+				754846F21527B81A0031EF76 /* libstdc++.dylib in Frameworks */,
+				754846F31527B81A0031EF76 /* CoreText.framework in Frameworks */,
+				754846F41527B81A0031EF76 /* QuartzCore.framework in Frameworks */,
+				754846F51527B81A0031EF76 /* CoreLocation.framework in Frameworks */,
+				754846F61527B81A0031EF76 /* libArcGIS.a in Frameworks */,
 				754846AC1527B63F0031EF76 /* UIKit.framework in Frameworks */,
 				754846AE1527B63F0031EF76 /* Foundation.framework in Frameworks */,
 				754846B01527B63F0031EF76 /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +113,15 @@
 		754846AA1527B63F0031EF76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				754846EC1527B7B60031EF76 /* Security.framework */,
+				754846EA1527B7B00031EF76 /* libz.dylib */,
+				754846E81527B7A60031EF76 /* MobileCoreServices.framework */,
+				754846E61527B79E0031EF76 /* MediaPlayer.framework */,
+				754846E41527B7910031EF76 /* libstdc++.dylib */,
+				754846E21527B77F0031EF76 /* CoreText.framework */,
+				754846E01527B7760031EF76 /* QuartzCore.framework */,
+				754846DE1527B76C0031EF76 /* CoreLocation.framework */,
+				754846DC1527B73D0031EF76 /* libArcGIS.a */,
 				754846AB1527B63F0031EF76 /* UIKit.framework */,
 				754846AD1527B63F0031EF76 /* Foundation.framework */,
 				754846AF1527B63F0031EF76 /* CoreGraphics.framework */,
@@ -96,18 +134,15 @@
 			children = (
 				754846BA1527B63F0031EF76 /* MFAppDelegate.h */,
 				754846BB1527B63F0031EF76 /* MFAppDelegate.m */,
-				754846BD1527B63F0031EF76 /* MFFirstViewController.h */,
-				754846BE1527B63F0031EF76 /* MFFirstViewController.m */,
-				754846C01527B63F0031EF76 /* first.png */,
-				754846C21527B63F0031EF76 /* first@2x.png */,
+				754846BD1527B63F0031EF76 /* MFMapViewController.h */,
+				754846BE1527B63F0031EF76 /* MFMapViewController.m */,
+				754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */,
+				754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */,
 				754846C41527B63F0031EF76 /* MFSecondViewController.h */,
 				754846C51527B63F0031EF76 /* MFSecondViewController.m */,
-				754846C71527B63F0031EF76 /* second.png */,
-				754846C91527B63F0031EF76 /* second@2x.png */,
-				754846CB1527B63F0031EF76 /* MFFirstViewController_iPhone.xib */,
-				754846CE1527B63F0031EF76 /* MFFirstViewController_iPad.xib */,
 				754846D11527B63F0031EF76 /* MFSecondViewController_iPhone.xib */,
 				754846D41527B63F0031EF76 /* MFSecondViewController_iPad.xib */,
+				754846F715282CC20031EF76 /* images */,
 				754846B21527B63F0031EF76 /* Supporting Files */,
 			);
 			path = SiteInspector;
@@ -122,6 +157,18 @@
 				754846B91527B63F0031EF76 /* SiteInspector-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		754846F715282CC20031EF76 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				751511B91528DE0B0021D789 /* home.png */,
+				754846C71527B63F0031EF76 /* second.png */,
+				754846C91527B63F0031EF76 /* second@2x.png */,
+				754846C01527B63F0031EF76 /* map_tab_icon.png */,
+				754846C21527B63F0031EF76 /* map_tab_icon@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,14 +223,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				754846B61527B63F0031EF76 /* InfoPlist.strings in Resources */,
-				754846C11527B63F0031EF76 /* first.png in Resources */,
-				754846C31527B63F0031EF76 /* first@2x.png in Resources */,
+				754846C11527B63F0031EF76 /* map_tab_icon.png in Resources */,
+				754846C31527B63F0031EF76 /* map_tab_icon@2x.png in Resources */,
 				754846C81527B63F0031EF76 /* second.png in Resources */,
 				754846CA1527B63F0031EF76 /* second@2x.png in Resources */,
-				754846CD1527B63F0031EF76 /* MFFirstViewController_iPhone.xib in Resources */,
-				754846D01527B63F0031EF76 /* MFFirstViewController_iPad.xib in Resources */,
+				754846CD1527B63F0031EF76 /* MFMapViewController_iPhone.xib in Resources */,
+				754846D01527B63F0031EF76 /* MFMapViewController_iPad.xib in Resources */,
 				754846D31527B63F0031EF76 /* MFSecondViewController_iPhone.xib in Resources */,
 				754846D61527B63F0031EF76 /* MFSecondViewController_iPad.xib in Resources */,
+				751511BA1528DE0B0021D789 /* home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +244,7 @@
 			files = (
 				754846B81527B63F0031EF76 /* main.m in Sources */,
 				754846BC1527B63F0031EF76 /* MFAppDelegate.m in Sources */,
-				754846BF1527B63F0031EF76 /* MFFirstViewController.m in Sources */,
+				754846BF1527B63F0031EF76 /* MFMapViewController.m in Sources */,
 				754846C61527B63F0031EF76 /* MFSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,20 +260,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		754846CB1527B63F0031EF76 /* MFFirstViewController_iPhone.xib */ = {
+		754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				754846CC1527B63F0031EF76 /* en */,
 			);
-			name = MFFirstViewController_iPhone.xib;
+			name = MFMapViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		754846CE1527B63F0031EF76 /* MFFirstViewController_iPad.xib */ = {
+		754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				754846CF1527B63F0031EF76 /* en */,
 			);
-			name = MFFirstViewController_iPad.xib;
+			name = MFMapViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		754846D11527B63F0031EF76 /* MFSecondViewController_iPhone.xib */ = {
@@ -298,7 +346,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiteInspector/SiteInspector-Prefix.pch";
 				INFOPLIST_FILE = "SiteInspector/SiteInspector-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/include/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -309,7 +366,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiteInspector/SiteInspector-Prefix.pch";
 				INFOPLIST_FILE = "SiteInspector/SiteInspector-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/include/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -333,6 +399,7 @@
 				754846DB1527B63F0031EF76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
