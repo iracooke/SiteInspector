@@ -8,7 +8,7 @@
 
 #import "MFAppDelegate.h"
 
-#import "MFFirstViewController.h"
+#import "MFMapViewController.h"
 
 #import "MFSecondViewController.h"
 
@@ -30,10 +30,10 @@
     // Override point for customization after application launch.
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[[MFFirstViewController alloc] initWithNibName:@"MFFirstViewController_iPhone" bundle:nil] autorelease];
+        viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPhone" bundle:nil] autorelease];
         viewController2 = [[[MFSecondViewController alloc] initWithNibName:@"MFSecondViewController_iPhone" bundle:nil] autorelease];
     } else {
-        viewController1 = [[[MFFirstViewController alloc] initWithNibName:@"MFFirstViewController_iPad" bundle:nil] autorelease];
+        viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
         viewController2 = [[[MFSecondViewController alloc] initWithNibName:@"MFSecondViewController_iPad" bundle:nil] autorelease];
     }
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
