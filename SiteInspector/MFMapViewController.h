@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArcGIS.h"
+#import <ArcGIS/ArcGIS.h>
 
 //contants for data layers
 #define kTiledMapServiceURL @"http://server.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer"

@@ -30,6 +30,7 @@
 		7515122A152A47050021D789 /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 75151221152A47050021D789 /* NSRelationshipDescription+MagicalDataImport.m */; };
 		7515122B152A47050021D789 /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 75151223152A47050021D789 /* NSString+MagicalDataImport.m */; };
 		7515122C152A47050021D789 /* NSManagedObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 75151225152A47050021D789 /* NSManagedObject+MagicalDataImport.m */; };
+		751766AB152A634800BF5E26 /* ArcGIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751766AA152A634800BF5E26 /* ArcGIS.framework */; };
 		754846AC1527B63F0031EF76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AB1527B63F0031EF76 /* UIKit.framework */; };
 		754846AE1527B63F0031EF76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AD1527B63F0031EF76 /* Foundation.framework */; };
 		754846B01527B63F0031EF76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846AF1527B63F0031EF76 /* CoreGraphics.framework */; };
@@ -54,7 +55,6 @@
 		754846F31527B81A0031EF76 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E21527B77F0031EF76 /* CoreText.framework */; };
 		754846F41527B81A0031EF76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E01527B7760031EF76 /* QuartzCore.framework */; };
 		754846F51527B81A0031EF76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846DE1527B76C0031EF76 /* CoreLocation.framework */; };
-		754846F61527B81A0031EF76 /* libArcGIS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846DC1527B73D0031EF76 /* libArcGIS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +100,7 @@
 		75151223152A47050021D789 /* NSString+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MagicalDataImport.m"; sourceTree = "<group>"; };
 		75151224152A47050021D789 /* NSManagedObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalDataImport.h"; sourceTree = "<group>"; };
 		75151225152A47050021D789 /* NSManagedObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		751766AA152A634800BF5E26 /* ArcGIS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArcGIS.framework; path = ../../Library/SDKs/ArcGIS/ArcGIS.framework; sourceTree = "<group>"; };
 		754846A71527B63F0031EF76 /* SiteInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiteInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754846AB1527B63F0031EF76 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		754846AD1527B63F0031EF76 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751766AB152A634800BF5E26 /* ArcGIS.framework in Frameworks */,
 				75151216152A46E70021D789 /* CoreData.framework in Frameworks */,
 				754846EE1527B81A0031EF76 /* Security.framework in Frameworks */,
 				754846EF1527B81A0031EF76 /* libz.dylib in Frameworks */,
@@ -147,7 +149,6 @@
 				754846F31527B81A0031EF76 /* CoreText.framework in Frameworks */,
 				754846F41527B81A0031EF76 /* QuartzCore.framework in Frameworks */,
 				754846F51527B81A0031EF76 /* CoreLocation.framework in Frameworks */,
-				754846F61527B81A0031EF76 /* libArcGIS.a in Frameworks */,
 				754846AC1527B63F0031EF76 /* UIKit.framework in Frameworks */,
 				754846AE1527B63F0031EF76 /* Foundation.framework in Frameworks */,
 				754846B01527B63F0031EF76 /* CoreGraphics.framework in Frameworks */,
@@ -227,6 +228,7 @@
 		7548469C1527B63F0031EF76 = {
 			isa = PBXGroup;
 			children = (
+				751766AA152A634800BF5E26 /* ArcGIS.framework */,
 				75151215152A46E70021D789 /* CoreData.framework */,
 				754846B11527B63F0031EF76 /* SiteInspector */,
 				754846AA1527B63F0031EF76 /* Frameworks */,
@@ -503,19 +505,20 @@
 		754846DA1527B63F0031EF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(HOME)/Library/SDKs/ArcGIS/",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiteInspector/SiteInspector-Prefix.pch";
 				INFOPLIST_FILE = "SiteInspector/SiteInspector-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/include/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -523,19 +526,20 @@
 		754846DB1527B63F0031EF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(HOME)/Library/SDKs/ArcGIS/",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SiteInspector/SiteInspector-Prefix.pch";
 				INFOPLIST_FILE = "SiteInspector/SiteInspector-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS.sdk/usr/local/include/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
