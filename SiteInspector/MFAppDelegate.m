@@ -10,7 +10,9 @@
 
 #import "MFMapViewController.h"
 
-#import "MFSecondViewController.h"
+#import "MFSitesTableViewController.h"
+
+#import "MagicalRecordHelpers.h"
 
 @implementation MFAppDelegate
 
@@ -26,15 +28,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Setup the core data stack
+    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Database"];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPhone" bundle:nil] autorelease];
-        viewController2 = [[[MFSecondViewController alloc] initWithNibName:@"MFSecondViewController_iPhone" bundle:nil] autorelease];
+        viewController2 = [[[MFSitesTableViewController alloc] initWithNibName:@"MFSitesTableViewController_iPhone" bundle:nil] autorelease];
     } else {
         viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
-        viewController2 = [[[MFSecondViewController alloc] initWithNibName:@"MFSecondViewController_iPad" bundle:nil] autorelease];
+        viewController2 = [[[MFSitesTableViewController alloc] initWithNibName:@"MFSitesTableViewController_iPad" bundle:nil] autorelease];
     }
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];

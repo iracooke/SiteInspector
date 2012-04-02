@@ -6,20 +6,20 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MFSecondViewController.h"
+#import "MFSitesTableViewController.h"
 
-@interface MFSecondViewController ()
+@interface MFSitesTableViewController ()
 
 @end
 
-@implementation MFSecondViewController
+@implementation MFSitesTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Second", @"Second");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        self.title = NSLocalizedString(@"Sites", @"Sites");
+        self.tabBarItem.image = [UIImage imageNamed:@"sites_tab_icon"];
     }
     return self;
 }

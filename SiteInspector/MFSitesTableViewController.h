@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MFSecondViewController : UIViewController
+@interface MFSitesTableViewController : UIViewController
 
 @end
