@@ -13,5 +13,5 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#import "CoreData+MagicalRecord.h"
 #define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"

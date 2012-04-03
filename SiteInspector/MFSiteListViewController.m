@@ -3,10 +3,12 @@
 //  SiteInspector
 //
 //  Created by Ira Cooke on 3/04/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Mudflat Software. All rights reserved.
 //
 
 #import "MFSiteListViewController.h"
+#import "MFSiteDetailViewController.h"
+#import "MFSite.h"
 
 @interface MFSiteListViewController ()
 
@@ -18,7 +20,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        self.title = NSLocalizedString(@"Sites", @"Sites");
+        self.tabBarItem.image = [UIImage imageNamed:@"sites_tab_icon"];
     }
     return self;
 }
@@ -50,24 +53,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [[MFSite numberOfEntities] intValue];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *reuseIdentifier = @"MFSiteListCellReuse";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-    // Configure the cell...
+
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier] autorelease];
+    }
+    
+    // Fetch the appropriate Site from the database
+    MFSite *site =[[MFSite findAllSortedBy:@"name" ascending:YES] objectAtIndex:indexPath.row];
+    
+    [cell.textLabel setText:site.name];
+    
     
     return cell;
 }
@@ -116,13 +126,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
+    MFSite *site =[[MFSite findAllSortedBy:@"name" ascending:YES] objectAtIndex:indexPath.row];
+
+    MFSiteDetailViewController *detailViewController = [[MFSiteDetailViewController alloc] initWithSite:site];
+
+    
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
-     */
+
 }
 
 @end

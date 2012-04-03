@@ -1,4 +1,5 @@
 #import "MFSite.h"
+#import "MagicalRecordShorthand.h"
 
 @implementation MFSite
 

@@ -3,10 +3,11 @@
 //  SiteInspector
 //
 //  Created by Ira Cooke on 1/04/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Mudflat Software. All rights reserved.
 //
 
 #import "MFMapViewController.h"
+#import "MFSite.h"
 
 @interface MFMapViewController (Private)
     - (void) addWaypointWithName:(NSString*)wpName kind:(NSInteger) wpKind lat:(float) wpLat long:(float) wpLong;
@@ -53,6 +54,7 @@
 	//Add it to the map view
 	UIView<AGSLayerView>* lyr = [self.mapView addMapLayer:tiledLayer withName:@"Tiled Layer"];
     
+    
 	//release to avoid memory leaks
 	[tiledLayer release];
 	
@@ -64,15 +66,32 @@
     self.waypointsLayer = [AGSGraphicsLayer graphicsLayer];
     self.waypointsView	 = [self.mapView addMapLayer:self.waypointsLayer withName:@"Waypoints Layer"];
     
-    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-37.638362 long:145.186137];
+// Meander road
+//    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-37.638362 long:145.186137];
+
+    // Lantana St
+    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-12.382135 long:130.844100];
+
+    for ( MFSite *site in [MFSite findAll] ){
+        [self addWaypointWithName:[site name] kind:[[site type] intValue] lat:[[site lattitude] floatValue]     long:[[site longitude] floatValue]];
+    }
     
+
 	AGSSpatialReference *sr = [AGSSpatialReference spatialReferenceWithWKID:4326];
 	double xmin, ymin, xmax, ymax;
-    xmin=145.10;		
-    xmax=145.25;
-    ymin=-37.60;
-    ymax=-37.69;
+
+    // Meander Road
+    //    xmin=145.10;		
+    //    xmax=145.25;
+    //    ymin=-37.60;
+    //    ymax=-37.69;
 	
+    //Lantana st 
+    xmin=130.83;
+    xmax=130.88;
+    ymin=-12.40;
+    ymax=-12.34;
+    
 	// zoom to the start location
 	AGSEnvelope *env = [AGSEnvelope envelopeWithXmin:xmin ymin:ymin xmax:xmax ymax:ymax spatialReference:sr];
 	[self.mapView zoomToEnvelope:env animated:YES];
@@ -113,6 +132,10 @@
         case MFWaypointKindHome:
             imageName = @"waypoint_home.png";
             break;
+        case MFWaypointKindSite:
+            imageName = @"waypoint_home.png";
+            break;
+            
         default:
             break;
     } 
@@ -144,6 +167,9 @@
             break;
         case MFWaypointKindHome:
             wpSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"home.png"];
+            break;
+        case MFWaypointKindSite:
+            wpSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"waypoint_generic.png"];
             break;
         default:
             break;

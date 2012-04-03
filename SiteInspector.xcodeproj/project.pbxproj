@@ -19,7 +19,6 @@
 		75151205152A3FC40021D789 /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 751511F7152A3FC40021D789 /* MRCoreDataAction.m */; };
 		75151208152A41EE0021D789 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75151206152A41EE0021D789 /* Model.xcdatamodeld */; };
 		7515120C152A43FC0021D789 /* MFSiteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7515120A152A43FC0021D789 /* MFSiteListViewController.m */; };
-		7515120D152A43FC0021D789 /* MFSiteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7515120B152A43FC0021D789 /* MFSiteListViewController.xib */; };
 		75151211152A45420021D789 /* _MFSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 75151210152A45420021D789 /* _MFSite.m */; };
 		75151214152A454F0021D789 /* MFSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 75151213152A454F0021D789 /* MFSite.m */; };
 		75151216152A46E70021D789 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75151215152A46E70021D789 /* CoreData.framework */; };
@@ -40,13 +39,10 @@
 		754846BF1527B63F0031EF76 /* MFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846BE1527B63F0031EF76 /* MFMapViewController.m */; };
 		754846C11527B63F0031EF76 /* map_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C01527B63F0031EF76 /* map_tab_icon.png */; };
 		754846C31527B63F0031EF76 /* map_tab_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C21527B63F0031EF76 /* map_tab_icon@2x.png */; };
-		754846C61527B63F0031EF76 /* MFSitesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754846C51527B63F0031EF76 /* MFSitesTableViewController.m */; };
 		754846C81527B63F0031EF76 /* sites_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C71527B63F0031EF76 /* sites_tab_icon.png */; };
 		754846CA1527B63F0031EF76 /* sites_tab_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754846C91527B63F0031EF76 /* sites_tab_icon@2x.png */; };
 		754846CD1527B63F0031EF76 /* MFMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */; };
 		754846D01527B63F0031EF76 /* MFMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */; };
-		754846D31527B63F0031EF76 /* MFSitesTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846D11527B63F0031EF76 /* MFSitesTableViewController_iPhone.xib */; };
-		754846D61527B63F0031EF76 /* MFSitesTableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754846D41527B63F0031EF76 /* MFSitesTableViewController_iPad.xib */; };
 		754846EE1527B81A0031EF76 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846EC1527B7B60031EF76 /* Security.framework */; };
 		754846EF1527B81A0031EF76 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846EA1527B7B00031EF76 /* libz.dylib */; };
 		754846F01527B81A0031EF76 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E81527B7A60031EF76 /* MobileCoreServices.framework */; };
@@ -55,6 +51,8 @@
 		754846F31527B81A0031EF76 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E21527B77F0031EF76 /* CoreText.framework */; };
 		754846F41527B81A0031EF76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846E01527B7760031EF76 /* QuartzCore.framework */; };
 		754846F51527B81A0031EF76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846DE1527B76C0031EF76 /* CoreLocation.framework */; };
+		7576D6C6152BB06300428812 /* MFSiteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6C4152BB06300428812 /* MFSiteDetailViewController.m */; };
+		7576D6C7152BB06300428812 /* MFSiteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +78,6 @@
 		75151207152A41EE0021D789 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		75151209152A43FC0021D789 /* MFSiteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSiteListViewController.h; sourceTree = "<group>"; };
 		7515120A152A43FC0021D789 /* MFSiteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSiteListViewController.m; sourceTree = "<group>"; };
-		7515120B152A43FC0021D789 /* MFSiteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFSiteListViewController.xib; sourceTree = "<group>"; };
 		7515120F152A45420021D789 /* _MFSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MFSite.h; sourceTree = "<group>"; };
 		75151210152A45420021D789 /* _MFSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MFSite.m; sourceTree = "<group>"; };
 		75151212152A454F0021D789 /* MFSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSite.h; sourceTree = "<group>"; };
@@ -115,14 +112,10 @@
 		754846BE1527B63F0031EF76 /* MFMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFMapViewController.m; sourceTree = "<group>"; };
 		754846C01527B63F0031EF76 /* map_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_tab_icon.png; sourceTree = "<group>"; };
 		754846C21527B63F0031EF76 /* map_tab_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_tab_icon@2x.png"; sourceTree = "<group>"; };
-		754846C41527B63F0031EF76 /* MFSitesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFSitesTableViewController.h; sourceTree = "<group>"; };
-		754846C51527B63F0031EF76 /* MFSitesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFSitesTableViewController.m; sourceTree = "<group>"; };
 		754846C71527B63F0031EF76 /* sites_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sites_tab_icon.png; sourceTree = "<group>"; };
 		754846C91527B63F0031EF76 /* sites_tab_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sites_tab_icon@2x.png"; sourceTree = "<group>"; };
 		754846CC1527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFMapViewController_iPhone.xib; sourceTree = "<group>"; };
 		754846CF1527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFMapViewController_iPad.xib; sourceTree = "<group>"; };
-		754846D21527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFSitesTableViewController_iPhone.xib; sourceTree = "<group>"; };
-		754846D51527B63F0031EF76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MFSitesTableViewController_iPad.xib; sourceTree = "<group>"; };
 		754846DC1527B73D0031EF76 /* libArcGIS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libArcGIS.a; path = ../../Library/SDKs/ArcGIS/iOS.sdk/usr/local/lib/libArcGIS.a; sourceTree = "<group>"; };
 		754846DE1527B76C0031EF76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		754846E01527B7760031EF76 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -132,6 +125,9 @@
 		754846E81527B7A60031EF76 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		754846EA1527B7B00031EF76 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		754846EC1527B7B60031EF76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7576D6C3152BB06300428812 /* MFSiteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSiteDetailViewController.h; sourceTree = "<group>"; };
+		7576D6C4152BB06300428812 /* MFSiteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSiteDetailViewController.m; sourceTree = "<group>"; };
+		7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFSiteDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,17 +264,15 @@
 			children = (
 				75151209152A43FC0021D789 /* MFSiteListViewController.h */,
 				7515120A152A43FC0021D789 /* MFSiteListViewController.m */,
-				7515120B152A43FC0021D789 /* MFSiteListViewController.xib */,
+				7576D6C3152BB06300428812 /* MFSiteDetailViewController.h */,
+				7576D6C4152BB06300428812 /* MFSiteDetailViewController.m */,
+				7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */,
 				754846BA1527B63F0031EF76 /* MFAppDelegate.h */,
 				754846BB1527B63F0031EF76 /* MFAppDelegate.m */,
 				754846BD1527B63F0031EF76 /* MFMapViewController.h */,
 				754846BE1527B63F0031EF76 /* MFMapViewController.m */,
 				754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */,
 				754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */,
-				754846C41527B63F0031EF76 /* MFSitesTableViewController.h */,
-				754846C51527B63F0031EF76 /* MFSitesTableViewController.m */,
-				754846D11527B63F0031EF76 /* MFSitesTableViewController_iPhone.xib */,
-				754846D41527B63F0031EF76 /* MFSitesTableViewController_iPad.xib */,
 				754846F715282CC20031EF76 /* images */,
 				754846B21527B63F0031EF76 /* Supporting Files */,
 				7515120E152A452F0021D789 /* Model */,
@@ -370,12 +364,10 @@
 				754846CA1527B63F0031EF76 /* sites_tab_icon@2x.png in Resources */,
 				754846CD1527B63F0031EF76 /* MFMapViewController_iPhone.xib in Resources */,
 				754846D01527B63F0031EF76 /* MFMapViewController_iPad.xib in Resources */,
-				754846D31527B63F0031EF76 /* MFSitesTableViewController_iPhone.xib in Resources */,
-				754846D61527B63F0031EF76 /* MFSitesTableViewController_iPad.xib in Resources */,
 				751511BA1528DE0B0021D789 /* home.png in Resources */,
 				751511C71528F5120021D789 /* waypoint_home.png in Resources */,
 				751511C91528F53E0021D789 /* waypoint_generic.png in Resources */,
-				7515120D152A43FC0021D789 /* MFSiteListViewController.xib in Resources */,
+				7576D6C7152BB06300428812 /* MFSiteDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +381,6 @@
 				754846B81527B63F0031EF76 /* main.m in Sources */,
 				754846BC1527B63F0031EF76 /* MFAppDelegate.m in Sources */,
 				754846BF1527B63F0031EF76 /* MFMapViewController.m in Sources */,
-				754846C61527B63F0031EF76 /* MFSitesTableViewController.m in Sources */,
 				751511FF152A3FC40021D789 /* NSManagedObject+MagicalRecord.m in Sources */,
 				75151200152A3FC40021D789 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				75151201152A3FC40021D789 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
@@ -408,6 +399,7 @@
 				7515122A152A47050021D789 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7515122B152A47050021D789 /* NSString+MagicalDataImport.m in Sources */,
 				7515122C152A47050021D789 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				7576D6C6152BB06300428812 /* MFSiteDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,22 +428,6 @@
 				754846CF1527B63F0031EF76 /* en */,
 			);
 			name = MFMapViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		754846D11527B63F0031EF76 /* MFSitesTableViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				754846D21527B63F0031EF76 /* en */,
-			);
-			name = MFSitesTableViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		754846D41527B63F0031EF76 /* MFSitesTableViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				754846D51527B63F0031EF76 /* en */,
-			);
-			name = MFSitesTableViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -3,16 +3,18 @@
 //  SiteInspector
 //
 //  Created by Ira Cooke on 1/04/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Mudflat Software. All rights reserved.
 //
 
 #import "MFAppDelegate.h"
 
 #import "MFMapViewController.h"
 
-#import "MFSitesTableViewController.h"
+#import "MFSiteListViewController.h"
 
 #import "MagicalRecordHelpers.h"
+// Only imported for debugging
+#import "MFSite.h" 
 
 @implementation MFAppDelegate
 
@@ -31,15 +33,48 @@
     // Setup the core data stack
     [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Database"];
     
+    // For debugging. Populate the database with a few sites of interest.
+    //
+    if ( [[MFSite numberOfEntities] intValue]==0 ){
+        MFSite *island=[MFSite createEntity];
+        MFSite *jetty=[MFSite createEntity];
+        MFSite *mudflats=[MFSite createEntity];
+        
+        // Immediately get permanent ids
+        NSError *err=nil;
+        [[mudflats managedObjectContext] obtainPermanentIDsForObjects:[NSArray arrayWithObjects:island,jetty,mudflats, nil] error:&err];
+        if ( err ){
+            NSLog(@"%@",err);
+        }
+        
+        [island setLattitude:[NSNumber numberWithFloat:-12.382303]];
+        [island setLongitude:[NSNumber numberWithFloat:130.837577]];
+        [island setName:@"Island"];
+        [island setType:[NSNumber numberWithInteger:MFWaypointKindSite]];
+        
+        [jetty setLattitude:[NSNumber numberWithFloat:-12.378614]];
+        [jetty setLongitude:[NSNumber numberWithFloat:130.841997]];
+        [jetty setName:@"Jetty"];
+        [jetty setType:[NSNumber numberWithInteger:MFWaypointKindSite]];
+        
+        [mudflats setLattitude:[NSNumber numberWithFloat:-12.389093]];
+        [mudflats  setLongitude:[NSNumber numberWithFloat:130.839937]];
+        [mudflats setName:@"Mudflats"];
+        [mudflats setType:[NSNumber numberWithInteger:MFWaypointKindSite]];
+
+    }
+    
+    
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPhone" bundle:nil] autorelease];
-        viewController2 = [[[MFSitesTableViewController alloc] initWithNibName:@"MFSitesTableViewController_iPhone" bundle:nil] autorelease];
+        viewController2 = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     } else {
         viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
-        viewController2 = [[[MFSitesTableViewController alloc] initWithNibName:@"MFSitesTableViewController_iPad" bundle:nil] autorelease];
+        viewController2 = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     }
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
