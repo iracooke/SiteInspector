@@ -19,7 +19,7 @@
 @implementation MFAppDelegate
 
 @synthesize window = _window;
-@synthesize tabBarController = _tabBarController;
+@synthesize tabBarController = _tabBarController,navigationController;
 
 - (void)dealloc
 {
@@ -31,7 +31,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Setup the core data stack
-    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Database"];
+   [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Database"];
+ //   [MagicalRecordHelpers setupCoreDataStackWithInMemoryStore];
     
     // For debugging. Populate the database with a few sites of interest.
     //
@@ -76,8 +77,15 @@
         viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
         viewController2 = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     }
+    
+    UINavigationController *aNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    self.navigationController=aNavigationController;
+    
+    
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, navigationController, nil];
+    [aNavigationController release];
+
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -110,12 +118,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if (viewController == self.navigationController) {
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }
 }
-*/
 
 /*
 // Optional UITabBarControllerDelegate method.

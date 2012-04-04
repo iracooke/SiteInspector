@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 @class MFSite;
 
-@interface MFSiteDetailViewController : UIViewController {
-    NSManagedObjectID *_siteID;
-}
+@interface MFSiteDetailViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+
+@property (retain, nonatomic) NSManagedObjectID *siteID;
 
 @property (retain, nonatomic) IBOutlet UILabel *nameLabel;
 

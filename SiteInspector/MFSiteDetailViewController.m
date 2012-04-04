@@ -8,6 +8,7 @@
 
 #import "MFSiteDetailViewController.h"
 #import "MFSite.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface MFSiteDetailViewController ()
 
@@ -17,6 +18,7 @@
 @synthesize nameLabel;
 @synthesize positionLabel;
 @synthesize photosView;
+@synthesize siteID;
 
 - (id)initWithSite:(MFSite*) site
 {
@@ -25,20 +27,25 @@
 
         NSAssert(![[site objectID] isTemporaryID],@"Got a temporary site id when initializing SiteDetailViewController");
         
-        _siteID=[[site objectID] retain];
+        self.siteID=[[site objectID] retain];
         
-        [nameLabel setText:[site name]];
-        [positionLabel setText:[NSString stringWithFormat:@"Lat:%f  Long:%f",[site lattitude],[site longitude]]];
         
         
     }
     return self;
 }
 
+// TODO: Use safely fetch object not "objectWithID"
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    MFSite *site = (MFSite*)[[NSManagedObjectContext MR_defaultContext] objectWithID:self.siteID];
+    
+    [nameLabel setText:[site name]];
+    [positionLabel setText:[NSString stringWithFormat:@"Lat:%f  Long:%f",[[site lattitude] floatValue],[[site longitude] floatValue]]];
+
+    
 }
 
 - (void)viewDidUnload
@@ -46,6 +53,7 @@
     [self setNameLabel:nil];
     [self setPositionLabel:nil];
     [self setPhotosView:nil];
+    [self setSiteID:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -56,13 +64,79 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)addPhoto:(id)sender {
-}
 - (void)dealloc {
     [nameLabel release];
     [positionLabel release];
     [photosView release];
-    [_siteID release];
+    [siteID release];
     [super dealloc];
 }
+
+#define Add Photo
+
+- (IBAction)addPhoto:(id)sender {
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO){
+        NSLog(@"Can't take picture. No camera");
+        return;
+    }
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    // Displays a control that allows the user to choose picture or
+    // movie capture, if both are available:
+//    cameraUI.mediaTypes =[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    
+    
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    cameraUI.allowsEditing = NO;
+    
+    cameraUI.delegate = self;
+    
+    [self presentViewController:cameraUI animated:YES completion:NULL];
+    
+}
+
+#define UIImagePickerDelegate
+
+// For responding to the user tapping Cancel.
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    
+    [[picker parentViewController] dismissModalViewControllerAnimated: YES];
+    [picker release];
+}
+
+// For responding to the user accepting a newly-captured picture or movie
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToSave;
+    
+    // Handle a still image capture
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        == kCFCompareEqualTo) {
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:
+                                     UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            imageToSave = editedImage;
+        } else {
+            imageToSave = originalImage;
+        }
+        
+        // Save the new image (original or edited) to the Camera Roll
+        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+    }
+    
+    [[picker parentViewController] dismissModalViewControllerAnimated: YES];
+    [picker release];
+}
+
+
 @end

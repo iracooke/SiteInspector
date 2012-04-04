@@ -53,6 +53,7 @@
 		754846F51527B81A0031EF76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754846DE1527B76C0031EF76 /* CoreLocation.framework */; };
 		7576D6C6152BB06300428812 /* MFSiteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6C4152BB06300428812 /* MFSiteDetailViewController.m */; };
 		7576D6C7152BB06300428812 /* MFSiteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */; };
+		7576D6E2152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6E1152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,8 @@
 		7576D6C3152BB06300428812 /* MFSiteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSiteDetailViewController.h; sourceTree = "<group>"; };
 		7576D6C4152BB06300428812 /* MFSiteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSiteDetailViewController.m; sourceTree = "<group>"; };
 		7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFSiteDetailViewController.xib; sourceTree = "<group>"; };
+		7576D6E0152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+FetchedObjectFromURI.h"; sourceTree = "<group>"; };
+		7576D6E1152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+FetchedObjectFromURI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,7 @@
 				754846BB1527B63F0031EF76 /* MFAppDelegate.m */,
 				754846BD1527B63F0031EF76 /* MFMapViewController.h */,
 				754846BE1527B63F0031EF76 /* MFMapViewController.m */,
+				7576D6E3152D05F600428812 /* Matt Galagher */,
 				754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */,
 				754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */,
 				754846F715282CC20031EF76 /* images */,
@@ -304,6 +308,15 @@
 				754846C21527B63F0031EF76 /* map_tab_icon@2x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		7576D6E3152D05F600428812 /* Matt Galagher */ = {
+			isa = PBXGroup;
+			children = (
+				7576D6E0152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.h */,
+				7576D6E1152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m */,
+			);
+			name = "Matt Galagher";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +413,7 @@
 				7515122B152A47050021D789 /* NSString+MagicalDataImport.m in Sources */,
 				7515122C152A47050021D789 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7576D6C6152BB06300428812 /* MFSiteDetailViewController.m in Sources */,
+				7576D6E2152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

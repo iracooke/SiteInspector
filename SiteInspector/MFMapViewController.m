@@ -8,9 +8,15 @@
 
 #import "MFMapViewController.h"
 #import "MFSite.h"
+#import "NSManagedObjectContext+FetchedObjectFromURI.h"
+#import "MFSiteDetailViewController.h"
+
+static NSString * const kWaypointKindAttribute=@"kWaypointKindAttribute";
+static NSString * const kWaypointIdentifierAttribute=@"kWaypointIdentifierAttribute";
+static NSString * const kWaypointNameAttribute=@"kWaypointNameAttribute";
 
 @interface MFMapViewController (Private)
-    - (void) addWaypointWithName:(NSString*)wpName kind:(NSInteger) wpKind lat:(float) wpLat long:(float) wpLong;
+- (void) addWaypointWithName:(NSString*)wpName kind:(NSInteger) wpKind lat:(float) wpLat long:(float) wpLong identifier:(NSString*)wpID;
 @end
 
 @implementation MFMapViewController
@@ -48,6 +54,8 @@
 	// set the delegate for the map view
 	self.mapView.layerDelegate = self;
 	
+    self.mapView.calloutDelegate=self;
+    
 	//create an instance of a tiled map service layer
 	AGSTiledMapServiceLayer *tiledLayer = [[AGSTiledMapServiceLayer alloc] initWithURL:[NSURL URLWithString:kTiledMapServiceURL]];
 	
@@ -70,10 +78,13 @@
 //    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-37.638362 long:145.186137];
 
     // Lantana St
-    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-12.382135 long:130.844100];
+    [self addWaypointWithName:@"Home" kind:MFWaypointKindHome lat:-12.382135 long:130.844100 identifier:nil]; // Won't be editable
 
     for ( MFSite *site in [MFSite findAll] ){
-        [self addWaypointWithName:[site name] kind:[[site type] intValue] lat:[[site lattitude] floatValue]     long:[[site longitude] floatValue]];
+        NSManagedObjectID *siteID=[site objectID];
+        NSAssert(![siteID isTemporaryID],@"Got a temporary site ID");
+        NSString *siteIdentifier = [[siteID URIRepresentation] absoluteString];
+        [self addWaypointWithName:[site name] kind:[[site type] intValue] lat:[[site lattitude] floatValue]     long:[[site longitude] floatValue] identifier:siteIdentifier];
     }
     
 
@@ -155,11 +166,14 @@
 #pragma mark -
 #pragma mark Add/Remove Waypoints
 
-- (void) addWaypointWithName:(NSString*)wpName kind:(NSInteger)wpKind lat:(float) wpLat long:(float) wpLong {
-
-    
+- (void) addWaypointWithName:(NSString*)wpName kind:(NSInteger)wpKind lat:(float) wpLat long:(float) wpLong identifier:(NSString*) wpID {
     AGSMarkerSymbol *wpSymbol=nil;
-    NSMutableDictionary *wpAttributes=[NSMutableDictionary dictionaryWithObjectsAndKeys:wpName,@"Title",[NSNumber numberWithInt:wpKind],@"Kind", nil];
+    NSMutableDictionary *wpAttributes=nil;
+    if ( wpID ){
+        wpAttributes=[NSMutableDictionary dictionaryWithObjectsAndKeys:wpName,kWaypointNameAttribute,[NSNumber numberWithInt:wpKind],kWaypointKindAttribute,wpID,kWaypointIdentifierAttribute, nil];
+    } else {
+          wpAttributes=[NSMutableDictionary dictionaryWithObjectsAndKeys:wpName,kWaypointNameAttribute,[NSNumber numberWithInt:wpKind],kWaypointKindAttribute,nil];
+    }
 
     switch (wpKind) {
         case MFWaypointKindNone:
@@ -217,6 +231,16 @@
 
 - (void) mapView: (AGSMapView *) mapView didClickCalloutAccessoryButtonForGraphic: (AGSGraphic *) graphic {
     // Edit waypoint. Look it up in the database and display in an editable view.
+    NSString *siteIdentifier = [[graphic attributes] objectForKey:kWaypointIdentifierAttribute];
+    
+   MFSite *site=(MFSite*)[[NSManagedObjectContext defaultContext] objectWithURI:[NSURL URLWithString:siteIdentifier]];
+    
+    if ( site ){
+        MFSiteDetailViewController *detailViewController = [[MFSiteDetailViewController alloc] initWithSite:site];
+        [self presentViewController:detailViewController animated:YES completion:NULL];
+        // TODO: Details needs a "Done" button when presented in this context
+    }
+    
 }
 
 
