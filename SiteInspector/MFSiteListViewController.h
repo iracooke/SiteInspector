@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MFSiteListViewController : UITableViewController {
-    UINavigationController *navController;
-}
+@interface MFSiteListViewController : UITableViewController  
 
 
 @end

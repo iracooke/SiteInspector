@@ -131,12 +131,13 @@
     MFSite *site =[[MFSite findAllSortedBy:@"name" ascending:YES] objectAtIndex:indexPath.row];
 
     MFSiteDetailViewController *detailViewController = [[MFSiteDetailViewController alloc] initWithSite:site];
-
     
     
     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-
+    
+    [detailViewController release];
+    
 }
+
 
 @end

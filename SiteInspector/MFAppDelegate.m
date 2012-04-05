@@ -19,7 +19,7 @@
 @implementation MFAppDelegate
 
 @synthesize window = _window;
-@synthesize tabBarController = _tabBarController,navigationController;
+@synthesize tabBarController = _tabBarController,sitesNavigationController,siteListViewController;
 
 - (void)dealloc
 {
@@ -69,22 +69,20 @@
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
+    UIViewController *mapViewController;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPhone" bundle:nil] autorelease];
-        viewController2 = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        mapViewController = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPhone" bundle:nil] autorelease];
+        self.siteListViewController = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     } else {
-        viewController1 = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
-        viewController2 = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        mapViewController = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
+        self.siteListViewController = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     }
     
-    UINavigationController *aNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController2];
-    self.navigationController=aNavigationController;
-    
+    self.sitesNavigationController=[[[UINavigationController alloc] initWithRootViewController:self.siteListViewController] autorelease];
+    self.sitesNavigationController.delegate=self;
     
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, navigationController, nil];
-    [aNavigationController release];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:mapViewController, self.sitesNavigationController, nil];
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
@@ -120,9 +118,10 @@
 
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if (viewController == self.navigationController) {
-        [self.navigationController popToRootViewControllerAnimated:NO];
+    if (viewController == self.sitesNavigationController) {
+        [self.sitesNavigationController popToRootViewControllerAnimated:NO];
     }
+    
 }
 
 /*
@@ -131,5 +130,47 @@
 {
 }
 */
+
+#pragma mark -
+#pragma mark UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    [CATransaction begin];
+    
+    if ( [viewController isKindOfClass:[UITableViewController class]] ){
+        self.tabBarController.tabBar.hidden=NO;
+    } else {
+        self.tabBarController.tabBar.hidden=YES;
+        
+        
+//        CGRect smallRect=self.tabBarController.view.frame;
+  //      smallRect.size.height+=30;
+    //    smallRect.origin.y+=30;
+        
+      //  self.tabBarController.view.frame=smallRect;
+    }
+    
+    [CATransaction commit];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [CATransaction begin];
+    
+    if ( [viewController isKindOfClass:[UITableViewController class]] ){
+
+    } else {
+ 
+//        CGRect smallRect=navigationController.view.frame;
+  //      smallRect.size.height+=30;
+    //    smallRect.origin.y+=30;
+        
+      //  navigationController.view.frame=smallRect;
+    }
+    
+    [CATransaction commit];
+    
+}
+
 
 @end

@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MFAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface MFAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
-@property (nonatomic,retain) UINavigationController *navigationController;
+@property (strong, nonatomic) UINavigationController *sitesNavigationController;
 
+@property (strong, nonatomic) UITableViewController *siteListViewController;
 
 @end

@@ -104,7 +104,7 @@
 // For responding to the user tapping Cancel.
 - (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
     
-    [[picker parentViewController] dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     [picker release];
 }
 
@@ -134,7 +134,7 @@
         UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
     }
     
-    [[picker parentViewController] dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     [picker release];
 }
 
