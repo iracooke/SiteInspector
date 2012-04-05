@@ -8,7 +8,9 @@
 
 #import "MFSiteDetailViewController.h"
 #import "MFSite.h"
+#import "NSManagedObjectContext+FetchedObjectFromURI.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import <AssetsLibrary/ALAssetsLibrary.h>
 
 @interface MFSiteDetailViewController ()
 
@@ -40,7 +42,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    MFSite *site = (MFSite*)[[NSManagedObjectContext MR_defaultContext] objectWithID:self.siteID];
+    MFSite *site = (MFSite*)[[NSManagedObjectContext MR_defaultContext] objectWithURI:self.siteID.URIRepresentation];
     
     [nameLabel setText:[site name]];
     [positionLabel setText:[NSString stringWithFormat:@"Lat:%f  Long:%f",[[site lattitude] floatValue],[[site longitude] floatValue]]];
@@ -131,7 +133,19 @@
         }
         
         // Save the new image (original or edited) to the Camera Roll
-        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+//        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+        
+//        MFSite *site = (MFSite*)[[NSManagedObjectContext MR_defaultContext] objectWithURI:self.siteID.URIRepresentation];
+
+        
+        
+  /*      ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
+        
+        [library writeImageToSavedPhotosAlbum:imageToSave metadata:info completionBlock:^(NSURL *assetURL, NSError *error) {
+          // TODO: Save assetURL to image object   
+        }];
+    */    
+        
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];

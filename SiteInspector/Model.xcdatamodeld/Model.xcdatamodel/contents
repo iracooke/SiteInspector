@@ -5,8 +5,14 @@
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SiteImage" inverseName="site" inverseEntity="SiteImage" syncable="YES"/>
+    </entity>
+    <entity name="SiteImage" representedClassName="MFSiteImage" syncable="YES">
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="site" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Site" inverseName="images" inverseEntity="Site" syncable="YES"/>
     </entity>
     <elements>
         <element name="Site" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="SiteImage" positionX="423" positionY="375" width="128" height="75"/>
     </elements>
 </model>

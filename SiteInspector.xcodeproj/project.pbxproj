@@ -56,6 +56,7 @@
 		7576D6E2152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6E1152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m */; };
 		75D37442152DC15300A13A8D /* MFTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37440152DC15300A13A8D /* MFTrackViewController.m */; };
 		75D37443152DC15300A13A8D /* MFTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D37441152DC15300A13A8D /* MFTrackViewController.xib */; };
+		75D37446152DCE7300A13A8D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D37445152DCE7300A13A8D /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		75D3743F152DC15300A13A8D /* MFTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTrackViewController.h; sourceTree = "<group>"; };
 		75D37440152DC15300A13A8D /* MFTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTrackViewController.m; sourceTree = "<group>"; };
 		75D37441152DC15300A13A8D /* MFTrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFTrackViewController.xib; sourceTree = "<group>"; };
+		75D37445152DCE7300A13A8D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D37446152DCE7300A13A8D /* AssetsLibrary.framework in Frameworks */,
 				751766AB152A634800BF5E26 /* ArcGIS.framework in Frameworks */,
 				75151216152A46E70021D789 /* CoreData.framework in Frameworks */,
 				754846EE1527B81A0031EF76 /* Security.framework in Frameworks */,
@@ -232,6 +235,7 @@
 		7548469C1527B63F0031EF76 = {
 			isa = PBXGroup;
 			children = (
+				75D37445152DCE7300A13A8D /* AssetsLibrary.framework */,
 				751766AA152A634800BF5E26 /* ArcGIS.framework */,
 				75151215152A46E70021D789 /* CoreData.framework */,
 				754846B11527B63F0031EF76 /* SiteInspector */,

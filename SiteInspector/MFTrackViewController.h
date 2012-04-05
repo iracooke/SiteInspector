@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AGSGPS;
 
-@interface MFTrackViewController : UIViewController
+@interface MFTrackViewController : UIViewController 
+
+@property (retain, nonatomic) IBOutlet UILabel *latLongText;
+@property (retain, nonatomic) IBOutlet UILabel *accuracyText;
 
 @end

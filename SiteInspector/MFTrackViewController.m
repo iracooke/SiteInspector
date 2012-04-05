@@ -7,12 +7,12 @@
 //
 
 #import "MFTrackViewController.h"
-
-@interface MFTrackViewController ()
-
-@end
+#import <ArcGIS/ArcGIS.h>
 
 @implementation MFTrackViewController
+
+@synthesize latLongText = _latLongText;
+@synthesize accuracyText = _accuracyText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,11 +27,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+/*    if ( self.gps ){
+        AGSPoint *currentPoint = self.gps.currentPoint;
+        self.latLongText.text=[NSString stringWithFormat:@"Lat:%f  Long:%f",currentPoint.y,currentPoint.x];
+        
+        self.accuracyText = [NSString stringWithFormat:@"Accurate to %f",(currentPoint.envelope.width+currentPoint.envelope.height)*0.5];
+        
+        
+    }*/
+    
+    
 }
 
 - (void)viewDidUnload
 {
+    [self setLatLongText:nil];
+    [self setAccuracyText:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -42,4 +54,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)dealloc {
+    [_latLongText release];
+    [_accuracyText release];
+    [super dealloc];
+}
 @end

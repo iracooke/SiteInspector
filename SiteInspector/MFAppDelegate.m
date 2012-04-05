@@ -85,7 +85,7 @@
     
     self.sitesNavigationController=[[[UINavigationController alloc] initWithRootViewController:self.siteListViewController] autorelease];
     self.sitesNavigationController.delegate=self;
-    
+        
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:mapViewController, self.sitesNavigationController,trackViewController, nil];
 
