@@ -12,6 +12,8 @@
 
 #import "MFSiteListViewController.h"
 
+#import "MFTrackViewController.h"
+
 #import "MagicalRecordHelpers.h"
 // Only imported for debugging
 #import "MFSite.h" 
@@ -69,12 +71,15 @@
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UIViewController *mapViewController;
+    UIViewController *mapViewController,*trackViewController;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         mapViewController = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPhone" bundle:nil] autorelease];
+        trackViewController = [[[MFTrackViewController alloc] initWithNibName:@"MFTrackViewController" bundle:nil] autorelease];
+        
         self.siteListViewController = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     } else {
         mapViewController = [[[MFMapViewController alloc] initWithNibName:@"MFMapViewController_iPad" bundle:nil] autorelease];
+        trackViewController = [[[MFTrackViewController alloc] initWithNibName:@"MFTrackViewController" bundle:nil] autorelease];
         self.siteListViewController = [[[MFSiteListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     }
     
@@ -82,7 +87,7 @@
     self.sitesNavigationController.delegate=self;
     
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:mapViewController, self.sitesNavigationController, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:mapViewController, self.sitesNavigationController,trackViewController, nil];
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

@@ -54,6 +54,8 @@
 		7576D6C6152BB06300428812 /* MFSiteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6C4152BB06300428812 /* MFSiteDetailViewController.m */; };
 		7576D6C7152BB06300428812 /* MFSiteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */; };
 		7576D6E2152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7576D6E1152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m */; };
+		75D37442152DC15300A13A8D /* MFTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37440152DC15300A13A8D /* MFTrackViewController.m */; };
+		75D37443152DC15300A13A8D /* MFTrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D37441152DC15300A13A8D /* MFTrackViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,9 @@
 		7576D6C5152BB06300428812 /* MFSiteDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFSiteDetailViewController.xib; sourceTree = "<group>"; };
 		7576D6E0152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+FetchedObjectFromURI.h"; sourceTree = "<group>"; };
 		7576D6E1152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+FetchedObjectFromURI.m"; sourceTree = "<group>"; };
+		75D3743F152DC15300A13A8D /* MFTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTrackViewController.h; sourceTree = "<group>"; };
+		75D37440152DC15300A13A8D /* MFTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTrackViewController.m; sourceTree = "<group>"; };
+		75D37441152DC15300A13A8D /* MFTrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFTrackViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,9 +279,12 @@
 				754846BB1527B63F0031EF76 /* MFAppDelegate.m */,
 				754846BD1527B63F0031EF76 /* MFMapViewController.h */,
 				754846BE1527B63F0031EF76 /* MFMapViewController.m */,
-				7576D6E3152D05F600428812 /* Matt Galagher */,
 				754846CB1527B63F0031EF76 /* MFMapViewController_iPhone.xib */,
 				754846CE1527B63F0031EF76 /* MFMapViewController_iPad.xib */,
+				75D3743F152DC15300A13A8D /* MFTrackViewController.h */,
+				75D37440152DC15300A13A8D /* MFTrackViewController.m */,
+				75D37441152DC15300A13A8D /* MFTrackViewController.xib */,
+				7576D6E3152D05F600428812 /* Matt Galagher */,
 				754846F715282CC20031EF76 /* images */,
 				754846B21527B63F0031EF76 /* Supporting Files */,
 				7515120E152A452F0021D789 /* Model */,
@@ -381,6 +389,7 @@
 				751511C71528F5120021D789 /* waypoint_home.png in Resources */,
 				751511C91528F53E0021D789 /* waypoint_generic.png in Resources */,
 				7576D6C7152BB06300428812 /* MFSiteDetailViewController.xib in Resources */,
+				75D37443152DC15300A13A8D /* MFTrackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +423,7 @@
 				7515122C152A47050021D789 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7576D6C6152BB06300428812 /* MFSiteDetailViewController.m in Sources */,
 				7576D6E2152D04F500428812 /* NSManagedObjectContext+FetchedObjectFromURI.m in Sources */,
+				75D37442152DC15300A13A8D /* MFTrackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
