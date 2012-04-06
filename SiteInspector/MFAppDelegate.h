@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AGSGPS;
 
 @interface MFAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate>
 
@@ -17,5 +18,7 @@
 @property (strong, nonatomic) UINavigationController *sitesNavigationController;
 
 @property (strong, nonatomic) UITableViewController *siteListViewController;
+
+@property (readonly, nonatomic) AGSGPS *gps;
 
 @end

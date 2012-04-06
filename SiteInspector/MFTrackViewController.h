@@ -11,6 +11,7 @@
 
 @interface MFTrackViewController : UIViewController 
 
+@property (retain, nonatomic) AGSGPS *gps;
 @property (retain, nonatomic) IBOutlet UILabel *latLongText;
 @property (retain, nonatomic) IBOutlet UILabel *accuracyText;
 

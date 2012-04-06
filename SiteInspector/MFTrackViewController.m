@@ -11,6 +11,7 @@
 
 @implementation MFTrackViewController
 
+@synthesize gps;
 @synthesize latLongText = _latLongText;
 @synthesize accuracyText = _accuracyText;
 
@@ -28,14 +29,14 @@
 {
     [super viewDidLoad];
 
-/*    if ( self.gps ){
+    if ( self.gps ){
         AGSPoint *currentPoint = self.gps.currentPoint;
         self.latLongText.text=[NSString stringWithFormat:@"Lat:%f  Long:%f",currentPoint.y,currentPoint.x];
         
         self.accuracyText = [NSString stringWithFormat:@"Accurate to %f",(currentPoint.envelope.width+currentPoint.envelope.height)*0.5];
         
         
-    }*/
+    }
     
     
 }
